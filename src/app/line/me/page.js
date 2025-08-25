@@ -143,6 +143,26 @@ export default function MePage() {
   <BottomMenu />
 
       <style>{`
+<<<<<<< Updated upstream
+=======
+        html,
+        body,
+        #__next {
+          height: 100%;
+          margin: 0;
+          padding: 0;
+          background-color: #f3faee;
+        }
+        * {
+          box-sizing: border-box;
+        }
+        .bunny-img {
+          position: absolute;
+          top: -24px;
+          right: -12px;
+          width: 72px;
+        }
+>>>>>>> Stashed changes
         .page {
           background-color: #f3faee;
           min-height: 100vh;

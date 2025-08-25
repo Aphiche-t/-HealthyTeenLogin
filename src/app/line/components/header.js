@@ -64,11 +64,11 @@ const Header = ({ title, cartoonImage }) => {
             font-size: 20px;
           }
           .header-cartoon {
-            width: 32px !important;
-            height: 32px !important;
+            width: 70px !important;
+            height: 90px !important;
           }
           .header-bar {
-            padding: 16px 8px 20px 8px;
+             padding: 24px 16px 24px 16px; 
           }
         }
       `}</style>

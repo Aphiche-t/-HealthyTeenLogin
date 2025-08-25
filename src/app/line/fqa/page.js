@@ -1,13 +1,8 @@
-"use client";
-
-import { useState } from "react";
-import BottomMenu from '@/app/line/components/menu';
+import BottomMenu from "@/app/line/components/menu";
+import styles from "./faq.module.css"; // อยู่ในโฟลเดอร์ fqa
 
 export default function AgreementPage() {
-  const [tab, setTab] = useState("privacy");
-
-  const privacyText = `
-1. จะเริ่มใช้งานระบบบันทึกอาหารได้อย่างไร?
+  const privacyText = `1. จะเริ่มใช้งานระบบบันทึกอาหารได้อย่างไร?
 เข้าแชท LINE OA แล้วกดปุ่ม “บันทึกอาหาร” ที่อยู่ในเมนู หรือพิมพ์คำว่า บันทึก จากนั้นระบบจะพาไปยังหน้าให้กรอกข้อมูล
 2. สามารถบันทึกอาหารได้กี่ครั้งต่อวัน?
 ระบบเปิดให้บันทึกได้ไม่จำกัดจำนวนครั้งต่อวัน คุณสามารถบันทึกทุกมื้อหรือของว่างระหว่างวันได้ตามต้องการ
@@ -26,36 +21,17 @@ export default function AgreementPage() {
 9. สามารถลบหรือแก้ไขข้อมูลอาหารที่บันทึกไว้ได้หรือไม่?
 ในเวอร์ชันปัจจุบันยังไม่รองรับการแก้ไขย้อนหลัง แต่จะมีการอัปเดตในอนาคตเพื่อให้สามารถลบ/แก้ไขได้
 10. สามารถใช้ระบบได้ฟรีหรือมีค่าใช้จ่าย?
-ระบบนี้เปิดให้ใช้งานฟรีสำหรับผู้เข้าร่วมโครงการ ไม่คิดค่าใช้จ่ายใดๆ ทั้งสิ้น
-`;
-   
-return (
-  <div className="wrapper">
-    <style jsx>{`
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
+ระบบนี้เปิดให้ใช้งานฟรีสำหรับผู้เข้าร่วมโครงการ ไม่คิดค่าใช้จ่ายใดๆ ทั้งสิ้น`;
 
-      .wrapper {
-        min-height: 100vh;
-        background-color: #e9f8ea;
-        font-family: 'Noto Sans Thai', sans-serif;
-        display: flex;
-        flex-direction: column;
-      }
+  return (
+    <div className={styles.wrapper}>
+      <header className={styles.header}>คำถามที่พบบ่อย (FAQ)</header>
 
-      .header {
-        background-color: #3ABB47;
-        color: white;
-        text-align: center;
-        padding: 16px;
-        font-size: 18px;
-        font-weight: bold;
-        width: 100%;
-      }
+      <main className={styles.content}>
+        {privacyText}
+      </main>
 
+<<<<<<< Updated upstream
       .tabs {
         display: flex;
         width: 100%;
@@ -127,3 +103,11 @@ return (
 );
 
 }
+=======
+      <div className={styles.menuDock}>
+        <BottomMenu />
+      </div>
+    </div>
+  );
+}
+>>>>>>> Stashed changes

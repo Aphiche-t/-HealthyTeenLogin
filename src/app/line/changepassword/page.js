@@ -3,6 +3,10 @@
 import { Noto_Sans_Thai } from "next/font/google";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+<<<<<<< Updated upstream
+=======
+import BottomMenu from "../components/menu";
+>>>>>>> Stashed changes
 
 const notoSansThai = Noto_Sans_Thai({
   weight: ["300", "400", "500", "700"],
@@ -22,6 +26,7 @@ export default function ChangePasswordPage() {
   };
 
   return (
+<<<<<<< Updated upstream
     <div className={notoSansThai.className} style={{ background: "#fff", minHeight: "100vh", padding: 0 }}>
       <div
         style={{
@@ -33,6 +38,32 @@ export default function ChangePasswordPage() {
         }}
       >
         {/* Back button */}
+=======
+    <div className={notoSansThai.className}>
+      {/* พื้นหลังสีขาวเต็มจอ + รีเซ็ต margin/padding */}
+      <style jsx global>{`
+        html, body, #__next {
+          height: 100%;
+          margin: 0;
+          padding: 0;
+          background-color: #ffffff; /* พื้นหลังขาวทั้งหน้า */
+        }
+        * { box-sizing: border-box; }
+      `}</style>
+
+      {/* เนื้อหา (ให้เลื่อนได้ + กันเมนูล่างทับ) */}
+      <div
+        className="content"
+        style={{
+          minHeight: "100vh",
+          background: "#ffffff",                 // พื้นหลังขาว
+          padding: "32px 20px 0 20px",
+          paddingBottom: "calc(140px + env(safe-area-inset-bottom, 0px))",
+          // ↑ เผื่อความสูง BottomMenu เพื่อเลื่อนไปถึงด้านล่างได้จริง
+        }}
+      >
+        {/* ปุ่มย้อนกลับ */}
+>>>>>>> Stashed changes
         <div style={{ display: "flex", alignItems: "center", marginBottom: 32 }}>
           <button
             onClick={() => router.back()}
@@ -54,17 +85,40 @@ export default function ChangePasswordPage() {
             <img src="/back2.png" alt="back" style={{ width: 22, height: 22 }} />
           </button>
         </div>
+<<<<<<< Updated upstream
         {/* Title */}
         <div style={{ color: "#3ABB47", fontWeight: 700, fontSize: 22, textAlign: "center", marginBottom: 32 }}>
           ตั้งรหัสผ่านใหม่
         </div>
         {/* Form */}
         <form onSubmit={handleSubmit}>
+=======
+
+        {/* หัวข้อ */}
+        <div
+          style={{
+            color: "#3ABB47",
+            fontWeight: 700,
+            fontSize: 22,
+            textAlign: "center",
+            marginBottom: 32,
+          }}
+        >
+          ตั้งรหัสผ่านใหม่
+        </div>
+
+        {/* ฟอร์ม */}
+        <form onSubmit={handleSubmit} style={{ maxWidth: 400, margin: "0 auto" }}>
+>>>>>>> Stashed changes
           <div style={{ marginBottom: 18 }}>
             <input
               type="password"
               value={currentPassword}
+<<<<<<< Updated upstream
               onChange={e => setCurrentPassword(e.target.value)}
+=======
+              onChange={(e) => setCurrentPassword(e.target.value)}
+>>>>>>> Stashed changes
               placeholder="รหัสผ่านปัจจุบัน"
               style={{
                 width: "100%",
@@ -76,13 +130,20 @@ export default function ChangePasswordPage() {
                 color: "#222",
                 fontFamily: "inherit",
                 marginBottom: 12,
+<<<<<<< Updated upstream
                 boxSizing: "border-box",
+=======
+>>>>>>> Stashed changes
               }}
             />
             <input
               type="password"
               value={newPassword}
+<<<<<<< Updated upstream
               onChange={e => setNewPassword(e.target.value)}
+=======
+              onChange={(e) => setNewPassword(e.target.value)}
+>>>>>>> Stashed changes
               placeholder="รหัสผ่านใหม่"
               style={{
                 width: "100%",
@@ -94,13 +155,20 @@ export default function ChangePasswordPage() {
                 color: "#222",
                 fontFamily: "inherit",
                 marginBottom: 12,
+<<<<<<< Updated upstream
                 boxSizing: "border-box",
+=======
+>>>>>>> Stashed changes
               }}
             />
             <input
               type="password"
               value={confirmPassword}
+<<<<<<< Updated upstream
               onChange={e => setConfirmPassword(e.target.value)}
+=======
+              onChange={(e) => setConfirmPassword(e.target.value)}
+>>>>>>> Stashed changes
               placeholder="ยืนยันรหัสผ่าน"
               style={{
                 width: "100%",
@@ -112,10 +180,17 @@ export default function ChangePasswordPage() {
                 color: "#222",
                 fontFamily: "inherit",
                 marginBottom: 12,
+<<<<<<< Updated upstream
                 boxSizing: "border-box",
               }}
             />
           </div>
+=======
+              }}
+            />
+          </div>
+
+>>>>>>> Stashed changes
           <div style={{ display: "flex", justifyContent: "flex-end", marginBottom: 32 }}>
             <a
               href="/line/forgotpassword"
@@ -124,6 +199,10 @@ export default function ChangePasswordPage() {
               ลืมรหัสผ่าน
             </a>
           </div>
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
           <button
             type="submit"
             style={{
@@ -143,8 +222,14 @@ export default function ChangePasswordPage() {
           </button>
         </form>
       </div>
+<<<<<<< Updated upstream
       {/* Bottom nav placeholder (if needed) */}
       <div style={{ height: 80 }} />
+=======
+
+      {/* เมนูล่าง (fixed) */}
+      <BottomMenu />
+>>>>>>> Stashed changes
     </div>
   );
 }
